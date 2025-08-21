@@ -1,137 +1,59 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang='pt-br'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fichas de Monitoria</title>
-    <link rel="stylesheet" href="../style.css">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Ficha de Monitoria</title>
+    <link rel='stylesheet' href='../style.css'>
     <style>
-        body { padding: 20px; }
-        .form-section, .feedback-section {
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .feedback {
+            width: 80%;
+            margin: 20px auto;
             background-color: #fff;
             padding: 20px;
-            margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #0055a5;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #ffa500;
-        }
-        .ficha {
-            display: none;
-            margin-top: 20px;
-        }
-        .frase-melhoria {
-            font-style: italic;
-            color: #555;
-            margin-top: 10px;
+        input {
+            width: 60px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Realizar Monitoria</h1>
-    </header>
     <main>
-        <div class="form-section">
-            <label>Consultor:</label>
-            <select id="consultor">
-                <option value="">Selecione</option>
-                <option value="Juliana Silva">Juliana Silva</option>
-                <option value="Carlos Souza">Carlos Souza</option>
-            </select>
+        <h2>Ficha de Monitoria Editável</h2>
+        <form>
+        <table>
+            <tr><th>Critério</th><th>Nota</th><th>Peso</th></tr>
+            <tr><td>Acolhimento</td><td><input type='number' step='0.01' value='8.5'></td><td><input type='number' step='0.01' value='0.20'></td></tr>
+            <tr><td>Escuta ativa</td><td><input type='number' step='0.01' value='9.0'></td><td><input type='number' step='0.01' value='0.15'></td></tr>
+            <tr><td>Empatia</td><td><input type='number' step='0.01' value='7.5'></td><td><input type='number' step='0.01' value='0.10'></td></tr>
+            <tr><td>Clareza na comunicação</td><td><input type='number' step='0.01' value='9.5'></td><td><input type='number' step='0.01' value='0.25'></td></tr>
+            <tr><td>Procedimentos corretos</td><td><input type='number' step='0.01' value='8.0'></td><td><input type='number' step='0.01' value='0.30'></td></tr>
+        </table>
+        </form>
 
-            <label>Monitor:</label>
-            <select id="monitor">
-                <option value="">Selecione</option>
-                <option value="Ana Lima - Qualidade">Ana Lima - Qualidade</option>
-                <option value="Rafael Costa - Supervisor">Rafael Costa - Supervisor</option>
-            </select>
-
-            <label>Nome do Cliente:</label>
-            <input type="text" id="cliente">
-
-            <label>Contato do Cliente:</label>
-            <input type="text" id="contato">
-
-            <label>Destino:</label>
-            <input type="text" id="destino">
-
-            <label>Número do Contrato:</label>
-            <input type="text" id="contrato">
-
-            <label>Canal da Monitoria:</label>
-            <select id="canal" onchange="mostrarFicha()">
-                <option value="">Selecione</option>
-                <option value="whatsapp">WhatsApp</option>
-                <option value="telefonia">Telefonia</option>
-            </select>
-
-            <label>Duração do Atendimento:</label>
-            <input type="text" id="duracao">
+        <div class='feedback'>
+            <h3>Painel de Feedback</h3>
+            <p><strong>Nota Final:</strong> 8.57</p>
+            <p><strong>Observação:</strong> Excelente desempenho geral, com oportunidade de melhoria em empatia.</p>
+            <p><strong>Frase de melhoria:</strong> "Continue aprimorando sua empatia para alcançar um atendimento 100%."</p>
         </div>
 
-        <div id="ficha-whatsapp" class="ficha">
-            <h2>Ficha de Monitoria - WhatsApp</h2>
-            <p>Critérios e pesos definidos nas configurações.</p>
-        </div>
-
-        <div id="ficha-telefonia" class="ficha">
-            <h2>Ficha de Monitoria - Telefonia</h2>
-            <p>Critérios e pesos definidos nas configurações.</p>
-        </div>
-
-        <div class="feedback-section">
-            <h2>Painel de Feedback</h2>
-            <label>Nota Final:</label>
-            <input type="text" id="nota" value="90" readonly>
-
-            <label>Observação:</label>
-            <textarea id="observacao"></textarea>
-
-            <div class="frase-melhoria" id="frase">"Busque sempre melhorar o acolhimento ao cliente para um atendimento 100%."</div>
-
-            <button onclick="enviarFeedback()">Enviar Feedback</button>
+        <div class='voltar'>
+            <a href='../index.html'><button>Voltar para página inicial</button></a>
         </div>
     </main>
-    <script>
-        function mostrarFicha() {
-            document.getElementById('ficha-whatsapp').style.display = 'none';
-            document.getElementById('ficha-telefonia').style.display = 'none';
-            const canal = document.getElementById('canal').value;
-            if (canal === 'whatsapp') {
-                document.getElementById('ficha-whatsapp').style.display = 'block';
-            } else if (canal === 'telefonia') {
-                document.getElementById('ficha-telefonia').style.display = 'block';
-            }
-        }
-
-        function enviarFeedback() {
-            const consultor = document.getElementById('consultor').value;
-            const nota = document.getElementById('nota').value;
-            const obs = document.getElementById('observacao').value;
-            alert(`Feedback enviado para ${consultor} com nota ${nota} e observação: ${obs}`);
-        }
-    </script>
 </body>
 </html>
