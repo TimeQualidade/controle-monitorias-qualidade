@@ -1,24 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
-    
+    <title>Monitoria de Qualidade</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
+        .navbar {
+            background-color: #0074D9;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
         .container {
             padding: 40px;
         }
         h1, h2 {
             color: #FF851B;
-        }
-        p {
-            font-size: 16px;
         }
         .section {
             background-color: #ffffff;
@@ -40,13 +51,23 @@
             background-color: #005fa3;
         }
     </style>
-
 </head>
 <body>
-    <div class="container">
-        <div class="section">
-            <html><head><title>Feedback</title></head><body><h1>Painel de Feedback</h1><p>Nota gerada, observação e frase motivacional.</p></body></html>
+    <div class="navbar">
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="calendario.html">Calendário</a>
+            <a href="fichas.html">Fichas</a>
+            <a href="cadastro.html">Consultores</a>
+            <a href="monitor.html">Administração</a>
+            <a href="feedback.html">Configurações</a>
         </div>
+        <div>
+            Bem-vindo, Monitor
+        </div>
+    </div>
+    <div class="container">
+<div class="section"><h1>Painel de Feedback</h1><p>Nota gerada, observação e frase motivacional.</p></div>
     </div>
 </body>
 </html>
