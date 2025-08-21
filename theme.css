@@ -1,0 +1,65 @@
+
+:root {
+  --blue-light: #ADD8E6;
+  --blue-dark: #003366;
+  --orange: #FFA500;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+header {
+  background-color: var(--blue-dark);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav {
+  background-color: var(--blue-light);
+  padding: 1rem;
+  width: 200px;
+  height: 100vh;
+  float: left;
+}
+main {
+  margin-left: 200px;
+  padding: 2rem;
+}
+.button {
+  background-color: var(--orange);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.calendar-container {
+  padding: 2rem;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+.day {
+  background-color: var(--blue-light);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.day:hover {
+  background-color: var(--orange);
+  color: white;
+}
+.calendar-panel {
+  background-color: var(--blue-dark);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+}
