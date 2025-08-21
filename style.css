@@ -1,13 +1,12 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f8;
     color: #333;
 }
 header {
-    background-color: #003366;
+    background-color: rgba(0, 51, 102, 0.85);
     color: white;
     padding: 20px;
     text-align: center;
@@ -17,10 +16,11 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    background-color: #0055a5;
+    background-color: rgba(0, 85, 165, 0.85);
+    flex-wrap: wrap;
 }
 nav ul li {
-    margin: 0 15px;
+    margin: 10px;
 }
 nav ul li a {
     color: white;
@@ -32,5 +32,23 @@ nav ul li a:hover {
 }
 main {
     padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 20px;
+    border-radius: 8px;
+}
+button {
+    background-color: #0055a5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ffa500;
+}
+.voltar {
+    margin-top: 30px;
     text-align: center;
 }
