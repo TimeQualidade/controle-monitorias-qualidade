@@ -1,1 +1,50 @@
-<html><head><title>Cadastro</title><link rel='stylesheet' href='assets/css/style.css'></head><body><h1>Cadastro</h1><form><input placeholder='Nome'><button>Salvar</button></form><script src='assets/js/cadastro.js'></script></body></html>
+
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Cadastro</title>
+    <link rel='stylesheet' href='css/style.css'>
+    <script src='js/cadastro.js' defer></script>
+</head>
+<body>
+    <header><h1>Controle de Monitorias | Qualidade</h1></header>
+    <nav>
+        <a href='index.html'>Início</a>
+        <a href='cadastro.html'>Cadastro</a>
+        <a href='monitorias.html'>Monitorias</a>
+        <a href='fichas.html'>Fichas</a>
+        <a href='feedback.html'>Feedback</a>
+        <a href='dashboard.html'>Dashboard</a>
+        <a href='relatorios.html'>Relatórios</a>
+        <a href='calendario.html'>Calendário</a>
+    </nav>
+    <main>
+        <h2>Cadastro de Times</h2>
+        <form id='form-times'>
+            <input type='text' placeholder='Nome do Time' name='nome_time'>
+            <input type='text' placeholder='Gestor Imediato' name='gestor'>
+            <button type='submit'>Salvar</button>
+        </form>
+
+        <h2>Cadastro de Consultores</h2>
+        <form id='form-consultores'>
+            <input type='text' placeholder='Nome do Consultor' name='nome_consultor'>
+            <button type='submit'>Salvar</button>
+        </form>
+
+        <h2>Cadastro de Motivos de Monitoria</h2>
+        <form id='form-motivos'>
+            <input type='text' placeholder='Motivo da Monitoria' name='motivo'>
+            <button type='submit'>Salvar</button>
+        </form>
+
+        <h2>Cadastro de Monitores</h2>
+        <form id='form-monitores'>
+            <input type='text' placeholder='Nome do Monitor' name='nome_monitor'>
+            <input type='text' placeholder='Função' name='funcao'>
+            <button type='submit'>Salvar</button>
+        </form>
+    </main>
+</body>
+</html>
