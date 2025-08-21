@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Monitorias</title>
+    <link rel='stylesheet' href='css/style.css'>
+    <script src='js/monitorias.js' defer></script>
+</head>
+<body>
+    <header><h1>Controle de Monitorias | Qualidade</h1></header>
+    <nav>
+        <a href='index.html'>Início</a>
+        <a href='cadastro.html'>Cadastro</a>
+        <a href='monitorias.html'>Monitorias</a>
+        <a href='fichas.html'>Fichas</a>
+        <a href='feedback.html'>Feedback</a>
+        <a href='dashboard.html'>Dashboard</a>
+        <a href='relatorios.html'>Relatórios</a>
+        <a href='calendario.html'>Calendário</a>
+    </nav>
+    <main>
+        <h2>Registro de Monitoria</h2>
+        <form id='form-monitoria'>
+            <label>Status:</label>
+            <select name='status' id='status'>
+                <option value='realizada'>Realizada</option>
+                <option value='nao_realizada'>Não Realizada</option>
+                <option value='pendente'>Pendente</option>
+            </select>
+            <label>Observações:</label>
+            <textarea name='observacao' id='observacao'></textarea>
+            <button type='submit'>Salvar</button>
+        </form>
+    </main>
+</body>
+</html>
