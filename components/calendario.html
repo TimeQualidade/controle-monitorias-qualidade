@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Monitorias</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .day {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            min-height: 100px;
+            position: relative;
+        }
+        .day:hover {
+            background-color: #e6f7ff;
+            cursor: pointer;
+        }
+        .monitoria {
+            background-color: #ffa500;
+            color: white;
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        #formulario {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calendário de Monitorias</h1>
+    </header>
+    <main>
+        <div class="calendar" id="calendar"></div>
+
+        <div id="formulario">
+            <h3>Agendar Monitoria</h3>
+            <label>Dia: <input type="number" id="dia" min="1" max="31"></label>
+            <label>Descrição: <input type="text" id="descricao"></label>
+            <button onclick="adicionarMonitoria()">Adicionar</button>
+        </div>
+    </main>
+    <script>
+        const calendar = document.getElementById('calendar');
+        const monitorias = {};
+
+        function gerarCalendario() {
+            calendar.innerHTML = '';
+            for (let i = 1; i <= 31; i++) {
+                const day = document.createElement('div');
+                day.className = 'day';
+                day.innerHTML = `<strong>${i}</strong>`;
+                if (monitorias[i]) {
+                    monitorias[i].forEach(desc => {
+                        const div = document.createElement('div');
+                        div.className = 'monitoria';
+                        div.textContent = desc;
+                        day.appendChild(div);
+                    });
+                }
+                calendar.appendChild(day);
+            }
+        }
+
+        function adicionarMonitoria() {
+            const dia = parseInt(document.getElementById('dia').value);
+            const descricao = document.getElementById('descricao').value;
+            if (!monitorias[dia]) monitorias[dia] = [];
+            monitorias[dia].push(descricao);
+            gerarCalendario();
+        }
+
+        gerarCalendario();
+    </script>
+</body>
+</html>
