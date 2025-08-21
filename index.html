@@ -1,25 +1,67 @@
 
 <!DOCTYPE html>
-<html lang='pt-br'>
+<html lang="pt-br">
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Controle de monitorias | Qualidade</title>
-  <link rel='stylesheet' href='styles/theme.css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Monitorias | Qualidade</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: #0074D9; /* azul escuro */
+            color: white;
+            height: 100vh;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #005fa3;
+        }
+        .main {
+            flex-grow: 1;
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #FF851B; /* laranja */
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #0074D9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #005fa3;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Controle de monitorias | Qualidade</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href='pages/cadastro/index.html'>Cadastro</a></li>
-      <li><a href='pages/monitor/index.html'>Ambiente do Monitor</a></li>
-    </ul>
-  </nav>
-  <main>
-    <h2>Bem-vindo ao sistema de monitoria</h2>
-    <p>Selecione uma opção no menu para começar.</p>
-  </main>
+    <div class="sidebar">
+        <a href="#">Dashboard</a>
+        <a href="#">Calendário</a>
+        <a href="#">Consultores</a>
+        <a href="#">Monitorias</a>
+        <a href="#">Relatórios</a>
+    </div>
+    <div class="main">
+        <h1>Bem-vindo ao sistema de monitoria</h1>
+        <p>Selecione uma opção no menu para começar.</p>
+        <a href="cadastro.html" class="button">Ir para Cadastro</a>
+        <a href="monitor.html" class="button">Ambiente do Monitor</a>
+    </div>
 </body>
 </html>
