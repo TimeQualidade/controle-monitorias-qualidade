@@ -1,3 +1,79 @@
-<!DOCTYPE html><html lang='pt-br'><head><meta charset='UTF-8'><title>Cadastro</title><link rel='stylesheet' href='../style.css'></head><body><main><h2>Cadastro</h2>
-<p>Conteúdo funcional em desenvolvimento...</p>
-<div class='voltar'><a href='../index.html'><button>Voltar para página inicial</button></a></div></main></body></html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        form {
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0055a5;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ffa500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cadastro</h1>
+    </header>
+    <main>
+        <h2>Consultores</h2>
+        <form id="form-consultores">
+            <label>Nome completo:
+                <input type="text" id="nome-consultor" required>
+            </label>
+            <button type="button" onclick="salvarConsultor()">Salvar</button>
+        </form>
+
+        <h2>Monitores</h2>
+        <form id="form-monitores">
+            <label>Nome completo:
+                <input type="text" id="nome-monitor" required>
+            </label>
+            <label>Função:
+                <input type="text" id="funcao-monitor" required>
+            </label>
+            <button type="button" onclick="salvarMonitor()">Salvar</button>
+        </form>
+    </main>
+    <script>
+        function salvarConsultor() {
+            const nome = document.getElementById('nome-consultor').value;
+            alert(`Consultor salvo: ${nome}`);
+        }
+
+        function salvarMonitor() {
+            const nome = document.getElementById('nome-monitor').value;
+            const funcao = document.getElementById('funcao-monitor').value;
+            alert(`Monitor salvo: ${nome} | Função: ${funcao}`);
+        }
+    </script>
+</body>
+</html>

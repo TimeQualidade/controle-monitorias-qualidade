@@ -1,3 +1,137 @@
-<!DOCTYPE html><html lang='pt-br'><head><meta charset='UTF-8'><title>Fichas</title><link rel='stylesheet' href='../style.css'></head><body><main><h2>Fichas</h2>
-<p>Conteúdo funcional em desenvolvimento...</p>
-<div class='voltar'><a href='../index.html'><button>Voltar para página inicial</button></a></div></main></body></html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fichas de Monitoria</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body { padding: 20px; }
+        .form-section, .feedback-section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0055a5;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ffa500;
+        }
+        .ficha {
+            display: none;
+            margin-top: 20px;
+        }
+        .frase-melhoria {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Realizar Monitoria</h1>
+    </header>
+    <main>
+        <div class="form-section">
+            <label>Consultor:</label>
+            <select id="consultor">
+                <option value="">Selecione</option>
+                <option value="Juliana Silva">Juliana Silva</option>
+                <option value="Carlos Souza">Carlos Souza</option>
+            </select>
+
+            <label>Monitor:</label>
+            <select id="monitor">
+                <option value="">Selecione</option>
+                <option value="Ana Lima - Qualidade">Ana Lima - Qualidade</option>
+                <option value="Rafael Costa - Supervisor">Rafael Costa - Supervisor</option>
+            </select>
+
+            <label>Nome do Cliente:</label>
+            <input type="text" id="cliente">
+
+            <label>Contato do Cliente:</label>
+            <input type="text" id="contato">
+
+            <label>Destino:</label>
+            <input type="text" id="destino">
+
+            <label>Número do Contrato:</label>
+            <input type="text" id="contrato">
+
+            <label>Canal da Monitoria:</label>
+            <select id="canal" onchange="mostrarFicha()">
+                <option value="">Selecione</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="telefonia">Telefonia</option>
+            </select>
+
+            <label>Duração do Atendimento:</label>
+            <input type="text" id="duracao">
+        </div>
+
+        <div id="ficha-whatsapp" class="ficha">
+            <h2>Ficha de Monitoria - WhatsApp</h2>
+            <p>Critérios e pesos definidos nas configurações.</p>
+        </div>
+
+        <div id="ficha-telefonia" class="ficha">
+            <h2>Ficha de Monitoria - Telefonia</h2>
+            <p>Critérios e pesos definidos nas configurações.</p>
+        </div>
+
+        <div class="feedback-section">
+            <h2>Painel de Feedback</h2>
+            <label>Nota Final:</label>
+            <input type="text" id="nota" value="90" readonly>
+
+            <label>Observação:</label>
+            <textarea id="observacao"></textarea>
+
+            <div class="frase-melhoria" id="frase">"Busque sempre melhorar o acolhimento ao cliente para um atendimento 100%."</div>
+
+            <button onclick="enviarFeedback()">Enviar Feedback</button>
+        </div>
+    </main>
+    <script>
+        function mostrarFicha() {
+            document.getElementById('ficha-whatsapp').style.display = 'none';
+            document.getElementById('ficha-telefonia').style.display = 'none';
+            const canal = document.getElementById('canal').value;
+            if (canal === 'whatsapp') {
+                document.getElementById('ficha-whatsapp').style.display = 'block';
+            } else if (canal === 'telefonia') {
+                document.getElementById('ficha-telefonia').style.display = 'block';
+            }
+        }
+
+        function enviarFeedback() {
+            const consultor = document.getElementById('consultor').value;
+            const nota = document.getElementById('nota').value;
+            const obs = document.getElementById('observacao').value;
+            alert(`Feedback enviado para ${consultor} com nota ${nota} e observação: ${obs}`);
+        }
+    </script>
+</body>
+</html>

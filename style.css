@@ -1,9 +1,9 @@
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f8fb;
+    background-color: #f0f4f8;
     color: #333;
 }
 header {
@@ -18,10 +18,9 @@ nav ul {
     display: flex;
     justify-content: center;
     background-color: #0055a5;
-    flex-wrap: wrap;
 }
 nav ul li {
-    margin: 10px;
+    margin: 0 15px;
 }
 nav ul li a {
     color: white;
@@ -33,20 +32,5 @@ nav ul li a:hover {
 }
 main {
     padding: 20px;
-    text-align: center;
-}
-button {
-    background-color: #0055a5;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #ffa500;
-}
-.voltar {
-    margin-top: 30px;
     text-align: center;
 }
