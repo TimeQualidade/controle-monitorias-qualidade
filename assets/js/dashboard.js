@@ -1,0 +1,1 @@
+console.log('Dashboard com gráficos carregado');
