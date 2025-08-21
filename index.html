@@ -1,72 +1,29 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang='pt-br'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Controle de monitorias | Qualidade</title>
-  <link rel="stylesheet" href="styles/theme.css">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Ambiente do Monitor</title>
+  <link rel='stylesheet' href='../../styles/theme.css'>
 </head>
 <body>
   <header>
-    <h1>Controle de monitorias | Qualidade</h1>
+    <h1>Ambiente do Monitor</h1>
   </header>
-  <nav>
-    <ul>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Calendário</a></li>
-      <li><a href="#">Consultores</a></li>
-      <li><a href="#">Monitorias</a></li>
-      <li><a href="#">Relatórios</a></li>
-    </ul>
-  </nav>
   <main>
-    <h2>Bem-vindo ao sistema de monitoria</h2>
-    <p>Selecione uma opção no menu para começar.</p>
-    <div class='calendar-container'>
-      <h2>Calendário de Monitorias</h2>
-      <div class='calendar-grid'>
-        <div class='day'>1</div>
-        <div class='day'>2</div>
-        <div class='day'>3</div>
-        <div class='day'>4</div>
-        <div class='day'>5</div>
-        <div class='day'>6</div>
-        <div class='day'>7</div>
-        <div class='day'>8</div>
-        <div class='day'>9</div>
-        <div class='day'>10</div>
-        <div class='day'>11</div>
-        <div class='day'>12</div>
-        <div class='day'>13</div>
-        <div class='day'>14</div>
-        <div class='day'>15</div>
-        <div class='day'>16</div>
-        <div class='day'>17</div>
-        <div class='day'>18</div>
-        <div class='day'>19</div>
-        <div class='day'>20</div>
-        <div class='day'>21</div>
-        <div class='day'>22</div>
-        <div class='day'>23</div>
-        <div class='day'>24</div>
-        <div class='day'>25</div>
-        <div class='day'>26</div>
-        <div class='day'>27</div>
-        <div class='day'>28</div>
-        <div class='day'>29</div>
-        <div class='day'>30</div>
-        <div class='day'>31</div>
-      </div>
-      <div class='calendar-panel'>
-        <h3>Monitorias do Dia</h3>
-        <ul>
-          <li>Consultor: João - Status: Realizada</li>
-          <li>Consultor: Maria - Status: Não realizada</li>
-        </ul>
-        <button class='button'>Realizar Monitoria</button>
-      </div>
-    </div>
+    <h2>Monitorias do Dia</h2>
+    <form>
+      <label>Consultor: João</label>
+      <select required>
+        <option value=''>Status</option>
+        <option value='realizada'>Realizada</option>
+        <option value='nao-realizada'>Não realizada</option>
+      </select>
+      <label>Observação (obrigatória se não realizada):</label>
+      <textarea required></textarea>
+      <button type='submit' class='button'>Salvar</button>
+    </form>
   </main>
 </body>
 </html>
